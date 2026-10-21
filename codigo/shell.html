@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es" data-version="1.2-digital">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="La O de IDISOL se convierte en un juego: veinte segundos para devorar las letras y el reloj.">
+  <title>IDISOL · El último bocado</title>
+  <style>
+    :root{--ui:#000; color-scheme:light}
+    *{box-sizing:border-box}
+    html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#fff}
+    body{font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+    main{position:relative;width:100%;height:100%;min-height:220px;isolation:isolate}
+    canvas{display:block;position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+    canvas.input-only{opacity:0}
+    .fallback{pointer-events:none}
+    #sound{position:absolute;right:max(25px,env(safe-area-inset-right));top:max(24px,env(safe-area-inset-top));border:0;background:none;color:var(--ui);opacity:.55;font-size:9px;letter-spacing:1.8px;padding:12px;cursor:pointer}
+    #sound:hover{opacity:1}
+    #start{position:absolute;border:0;background:none;border-radius:50%;padding:0;pointer-events:auto;touch-action:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+    #start:focus-visible{outline:2px dashed var(--ui);outline-offset:10px}
+    #resume{position:absolute;left:50%;top:74%;transform:translate(-50%,-50%);border:1px solid currentColor;color:var(--ui);background:transparent;padding:14px 24px;font-size:11px;letter-spacing:2px;cursor:pointer}
+    button:focus-visible{outline:2px solid var(--ui);outline-offset:5px}
+    [hidden]{display:none!important}
+    .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+    @media(max-width:700px){#sound{right:12px;top:12px}}
+  </style>
+</head>
+<body>
+  <main aria-label="IDISOL: juego del último bocado">
+    <canvas id="game" aria-label="Juego IDISOL. Haz clic en la O o usa el botón accesible para empezar.">Tu navegador necesita Canvas para mostrar este juego.</canvas>
+    <button id="start" disabled aria-label="Jugar: veinte segundos para comer IDISOL y el reloj"><span class="sr">Jugar. Usa el mouse, el dedo o las flechas del teclado.</span></button>
+    <audio id="music" preload="auto" playsinline aria-hidden="true"></audio>
+    <button id="sound" aria-pressed="false" aria-label="Silenciar o activar la música">SONIDO ON</button>
+    <button id="resume" hidden>CONTINUAR</button>
+    <p id="announcement" class="sr" aria-live="polite" aria-atomic="true"></p>
+  </main>
+  <script>
+  /*__BUNDLE__*/
+  </script>
+</body>
+</html>
